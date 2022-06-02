@@ -13,7 +13,7 @@ jobs:
       - name: Diff against Develop
         id: diff
         run: |
-          GIT_DIFF=$(git rev-list --left-right --pretty=oneline  test/develop...${{env.GITHUB_HEAD_REF}} | egrep "<")
+          GIT_DIFF=$(git rev-list --left-right --pretty=oneline  remotes/origin/test/develop...${{env.GITHUB_HEAD_REF}} | egrep "<")
           if [[ $GIT_DIFF ]]
           then
             echo "You need to Update  yout branch with develop"
