@@ -1,7 +1,16 @@
 asi sale cuando develop2 esta por encima de develop
     >e56cb3155607a890803c2a95aea0641f51f01209 dummy chenge on develop2 to test commands
->f6c6ec73adbe2e673367e9cfee514526db91db24 add result file
->e56cb3155607a890803c2a95aea0641f51f01209 dummy chenge on develop2 to test commands
+    >f6c6ec73adbe2e673367e9cfee514526db91db24 add result file
+    >e56cb3155607a890803c2a95aea0641f51f01209 dummy chenge on develop2 to test commands
 
->f6c6ec73adbe2e673367e9cfee514526db91db24 add result file
->e56cb3155607a890803c2a95aea0641f51f01209 dummy chenge on develop2 to test commands
+    >f6c6ec73adbe2e673367e9cfee514526db91db24 add result file
+    >e56cb3155607a890803c2a95aea0641f51f01209 dummy chenge on develop2 to test commands
+
+asi se ve cuandodevelop esa por encima de develop 2
+╰─ git rev-list --left-right --pretty=oneline  test/develop...test/develop2                                                        ─╯
+    <9b78be4b124a145add139ddb7a86261e2cc4bf3e uno por encima
+    <4283acff3cbcedde639c6280ed05320329e7087a un commit por encima
+    <6c8f88ee6e6cff4055b5407b162a946c30e52578 Merge pull request #6 from pm3ndoza/test/develop2
+
+asi se ven cuando estan iguales
+ git rev-list --left-right --pretty=oneline  test/develop...test/develop2                                                        ─╯
