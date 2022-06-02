@@ -3,21 +3,26 @@ on: push
 jobs:
   diff:
     runs-on: ubuntu-latest
+    outputs:
+      GIT_DIFF: ${{ steps.diff.outputs.GIT_DIFF }}
     steps:
       - name: Checkout repo
         uses: 'actions/checkout@v2'
 
 
-      - name: Diff against master
+      - name: Diff against Develop
         id: diff
-        uses: 'selfagency/diffmasterflex@v1.0.3'
-        with:
-          ref: 'origin/main'
+        run: |
+          GIT_DIFF=$(git rev-list --left-right --pretty=oneline  test/develop...${{GITHUB_HEAD_REF}} | egrep "<")
+          if [[ $GIT_DIFF ]]
+          then
+            echo "You need to Update  yout branch with develop"
+          fi
+          echo "::set-output name=GIT_DIFF::$GIT_DIFF"
 
 
       - name: Check for changes
         id: changes
-        if: ${{ steps.diff.outputs.changed == 'true' }}
+        if: ${{ steps.diff.outputs.GIT_DIFF }}
         run:
-          DIFF="${{ steps.diff.outputs.diff }}"
-          echo $DIFF
+          echo "You need to Update  yout branch with develop "
