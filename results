@@ -12,5 +12,7 @@ asi se ve cuandodevelop esa por encima de develop 2
     <4283acff3cbcedde639c6280ed05320329e7087a un commit por encima
     <6c8f88ee6e6cff4055b5407b162a946c30e52578 Merge pull request #6 from pm3ndoza/test/develop2
 
-asi se ven cuando estan iguales
- git rev-list --left-right --pretty=oneline  test/develop...test/develop2                                                        ─╯
+#asi se ven cuando estan iguales
+ git rev-list --left-right --pretty=oneline  test/develop...test/develop2
+
+ dummy change                                                   ─╯
