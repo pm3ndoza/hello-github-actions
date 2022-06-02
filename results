@@ -15,4 +15,3 @@ asi se ve cuandodevelop esa por encima de develop 2
 #asi se ven cuando estan iguales
  git rev-list --left-right --pretty=oneline  test/develop...test/develop2
 
- dummy change                                                   ─╯
