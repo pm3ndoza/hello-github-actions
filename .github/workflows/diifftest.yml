@@ -1,0 +1,21 @@
+name: A workflow for my Hello World file
+on: push
+jobs:
+  diff:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: 'actions/checkout@v2'
+
+      - name: Diff against master
+        id: diff
+        uses: 'selfagency/diffmasterflex@v1.0.3'
+        with:
+          ref: 'origin/master'
+
+      - name: Check for changes
+        id: changes
+        if: ${{ steps.diff.outputs.changed == 'true' }}
+        run:
+          DIFF="${{ steps.diff.outputs.diff }}"
+          echo $DIFF
