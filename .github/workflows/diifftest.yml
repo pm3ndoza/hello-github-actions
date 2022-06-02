@@ -1,4 +1,4 @@
-name: A workflow for my Hello World file
+name: check diferences between branches
 on: push
 jobs:
   diff:
@@ -11,7 +11,7 @@ jobs:
         id: diff
         uses: 'selfagency/diffmasterflex@v1.0.3'
         with:
-          ref: 'origin/master'
+          ref: 'origin/main'
 
       - name: Check for changes
         id: changes
